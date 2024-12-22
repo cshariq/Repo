@@ -1,0 +1,25 @@
+{
+    "name": "hackatime",
+    "description": "A minimalist, self-hosted WakaTime-compatible backend for coding statistics",
+    "repository": {
+        "url": "https://github.com/kcoderhtml/hackatime",
+        "license": "MIT"
+    },
+    "urls": {
+        "prod": "https://w.dunkirk.sh"
+    },
+    "bugs": {
+        "list": "https://github.com/kcoderhtml/hackatime/issues",
+        "report": "https://github.com/kcoderhtml/hackatime/issues/new"
+    },
+    "keywords": [
+        "go",
+        "golang",
+        "html5",
+        "sql",
+        "productivity",
+        "timetracking",
+        "selfhosted",
+        "devtools"
+    ]
+}
