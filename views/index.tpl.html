@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ template "head.tpl.html" . }}
+
+    <body
+        class="relative bg-background dark:bg-background-dark text-text-primary dark:text-text-dark-primary p-4 pt-10 flex flex-col min-h-screen max-w-screen- mx-auto justify-center"
+    >
+        {{ template "header.tpl.html" . }}
+
+        <style>
+            .logo {
+                position: absolute;
+                top: 0;
+            }
+
+            #logo-side {
+                left: 0;
+            }
+        </style>
+
+        {{ template "alerts.tpl.html" . }} {{ template "login-btn.tpl.html" . }}
+
+        <main
+            class="mt-10 px-4 md:px-10 lg:px-24 grow flex justify-center max-w-screen-lg self-center"
+        >
+            <div class="flex flex-col">
+                {{ if and .Newsbox .Newsbox.Text }}
+                <div class="mb-14 -mt-4 newsbox newsbox-{{ .Newsbox.Type }}">
+                    {{ .Newsbox.Text | htmlSafe }}
+                </div>
+                {{ end }}
+
+                <div class="w-full p-10 my-10 bg-primary dark:bg-primary">
+                    If you are coming from high seas then you need to reset your
+                    password before you login. You can reset your password using the 
+                    forgot password button on the login page :)
+                </div>
+
+                <h1
+                    class="text-8xl font-semibold antialiased text-center mb-10 leading-snug"
+                >
+                    Keep Track of<br /><span class="text-primary">Your</span>
+                    Coding Time
+                </h1>
+                <p
+                    class="text-center text-text-secondary dark:text-text-dark-secondary text-xl my-2"
+                >
+                    Hackatime is an open-source tool that helps you keep track
+                    of the time spent coding on different projects.
+                    <br />
+                    <br />
+                    Ideal for statistics nerds and everyone else.
+                </p>
+
+                <i
+                    class="text-center text-text-tertiary dark:text-text-dark-tertiary my-4"
+                >
+                    Tracking
+                    <b class="text-accent-secondary dark:text-accent-primary"
+                        >{{ $.TotalHours }}</b
+                    >
+                    hours of coding across
+                    <b class="text-accent-secondary dark:text-accent-primary"
+                        >{{ $.TotalUsers }}</b
+                    >
+                    users since
+                    <b class="text-accent-secondary dark:text-accent-primary"
+                        >2024</b
+                    >.
+                </i>
+
+                <div class="flex justify-center mb-8">
+                    <iframe
+                        id="youtube-embed"
+                        width="800"
+                        height="513"
+                        src="https://www.youtube.com/embed/eKoD9yyr1To?si=xwT-GzxX5_zgYRya"
+                        title="Hackatime Tutorial Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        class="rounded-lg border border-primary dark:border-primary-dark shadow-lg"
+                    ></iframe>
+                </div>
+            </div>
+        </main>
+
+        {{ template "footer.tpl.html" . }} {{ template "foot.tpl.html" . }}
+    </body>
+</html>
